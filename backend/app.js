@@ -16,7 +16,7 @@ app.use(cors());
 app.use(logger('dev'));
 app.use(express.json());
 
-app.use('/', indexRouter);
+app.use(express.static('../frontend/dist', { index: 'index.html' }));
 app.use('/api/users', usersRouter);
 app.use('/api/messages', messagesRouter);
 app.use('/api/chats', chatsRouter);
