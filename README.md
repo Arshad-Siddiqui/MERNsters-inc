@@ -2,29 +2,32 @@
 
 To find and start a conversation with friends. An interactive application that allows you to search and connect with new and existing friends.
 
+## Here's the monolithic backend: [friendzone-api](https://github.com/Arshad-Siddiqui/MERNsters-api)
+
 ## Tech stack
 
-* Node (v18.12)
-* NPM (8.19.2)
-* Jest (v29.3.1) for unit testing on the backend.
-* Cypress for end-to-end testing and component testing on the frontend.
-* Tailwind CSS (v2.2.19) for styling.
-* Mongoose to model objects in MongoDB.
-* Handlebars for the home template.
-* ESLint for linting.
-* Nodemon (2.0.20) to reload the server automatically.
-* vite (3.2.3)
-* vitest (0.25.2)
-* BCrypt (5.0.1) for password hashing.
-* useGestures (v9.0.0-beta.3) for swipe gestures.
-* React Spring (v9.2.4) for animations.
-* Firebase (v9.1.3) for image storage.
-  
+- Node (v18.12)
+- NPM (8.19.2)
+- Jest (v29.3.1) for unit testing on the backend.
+- Cypress for end-to-end testing and component testing on the frontend.
+- Tailwind CSS (v2.2.19) for styling.
+- Mongoose to model objects in MongoDB.
+- Handlebars for the home template.
+- ESLint for linting.
+- Nodemon (2.0.20) to reload the server automatically.
+- vite (3.2.3)
+- vitest (0.25.2)
+- BCrypt (5.0.1) for password hashing.
+- useGestures (v9.0.0-beta.3) for swipe gestures.
+- React Spring (v9.2.4) for animations.
+- Firebase (v9.1.3) for image storage.
+
 ## User Stories
+
 ```
 As a friendzone user
-So I can signup with ease 
-I would like to login and logout. 
+So I can signup with ease
+I would like to login and logout.
 ```
 
 ```
@@ -61,12 +64,12 @@ I would like to be matched with likeminded people based on hobbies and activitie
 ## Diagrams
 
 ### Backend Diagram
+
 <img src='images/backend.png'/>
 
 ### Frontend Diagram
+
 <img src='images/frontend.png'/>
-
-
 
 ## How to run
 
@@ -90,6 +93,7 @@ npm run start
 1. Fork this repository
 2. Clone your fork to your local machine
 3. Install Node.js dependencies for both frontend and backend (API)
+
    ```
    ; cd backend
    ; npm i
@@ -116,11 +120,12 @@ npm run start
    ```
 2. Start the front end
 
-  In a new terminal session...
-  ```
-  ; cd frontend
-  ; npm run start
-  ```
+In a new terminal session...
+
+```
+; cd frontend
+; npm run start
+```
 
 You should now be able to open your browser and go to `http://localhost:3000/` which directs you to the hompeage, where you can sign-up or log in.
 
@@ -151,28 +156,28 @@ You should now be able to open your browser and go to `http://localhost:3000/` w
    # Show all documents in a collection, formatted
    db.<collection name>.find().pretty()
 ```
-### Testing
 
+### Testing
 
 #### The Backend (API)
 
 **Note the use of an environment variable for the JWT secret**
 
-  Start the server in test mode (so that it connects to the test DB)
+Start the server in test mode (so that it connects to the test DB)
 
-  ```
-  ; cd api
-  ; JWT_SECRET=SUPER_SECRET npm run start:test
-  ```
+```
+; cd api
+; JWT_SECRET=SUPER_SECRET npm run start:test
+```
 
-  Then run the tests in a new terminal session
+Then run the tests in a new terminal session
 
-  ```
-  ; cd api
-  ; JWT_SECRET=SUPER_SECRET npm run test
-  ```
+```
+; cd api
+; JWT_SECRET=SUPER_SECRET npm run test
+```
 
-  # The Mernsters team
+# The Mernsters team
 
 This project was created by:
 
