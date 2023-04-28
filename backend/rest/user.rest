@@ -1,2 +1,0 @@
-get http://localhost:8080/api/users/getAllUsers
-Content-Type:application/json
