@@ -193,3 +193,8 @@ This project was created by:
 - [Pauline Davis](https://github.com/paulinejdavis)
 - [Tauqeer Shoaib](https://github.com/tauqeer92)
 - [Blake O'Donnell](https://github.com/blakerodonnell)
+
+# Things I want list
+
+- [ ] Make the background darken after signing on.
+- [ ] Solve chat bugs. (Get backend stable)
