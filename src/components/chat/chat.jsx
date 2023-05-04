@@ -1,28 +1,28 @@
-import React, { useEffect, useState } from 'react';
-import NavBar from '../lib/navbar';
-import { faCaretDown, faPlus } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import ChatCard from './ChatCard';
-import './ChatList.css';
+import React, { useEffect, useState } from "react";
+import NavBar from "../lib/navbar";
+import { faCaretDown, faPlus } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ChatCard from "./ChatCard";
+import "./ChatList.css";
 
 // import MessageList from '../messagelist/messagelist';
 
 const Chat = () => {
   const [chat, setChat] = useState({ messages: [], users: [] });
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState("");
   const [user, setUser] = useState({
     chats: [],
   });
-  const [chatMessage, setChatsMessage] = useState('');
+  const [chatMessage, setChatsMessage] = useState("");
   const reload = () => {
     // returns a user object with chat list
-    fetch('/api/chatlist/get', {
-      method: 'post',
+    fetch("/api/chatlist/get", {
+      method: "post",
       body: JSON.stringify({
-        chatId: window.localStorage.getItem('userId'),
+        chatId: window.localStorage.getItem("userId"),
       }),
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
     })
       .then((response) => response.json())
@@ -34,13 +34,13 @@ const Chat = () => {
   // select chat and display msgs
   const changeChatDynamic = (chat_id) => {
     setChatsMessage(chat_id);
-    fetch('/api/chats/findchat', {
-      method: 'post',
+    fetch("/api/chats/findchat", {
+      method: "post",
       body: JSON.stringify({
         objectId: chat_id,
       }),
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
     })
       .then((response) => response.json())
@@ -51,27 +51,27 @@ const Chat = () => {
 
   // add msg to chat
   const handleSubmit = async (error) => {
-    console.log('What is in chatmessage: ', chatMessage);
+    console.log("What is in chatmessage: ", chatMessage);
     error.preventDefault();
-    const response = await fetch('/api/chats/addmessage', {
-      method: 'post',
+    const response = await fetch("/api/chats/addmessage", {
+      method: "post",
       body: JSON.stringify({
         // this is dummy data - sender id and recip if are not used
         objectId: chatMessage,
-        senderId: '6380b30f83141a9fd30a7662',
-        recipientId: '6380b30f83141a9fd30a7662',
+        senderId: "6380b30f83141a9fd30a7662",
+        recipientId: "6380b30f83141a9fd30a7662",
         text: message,
       }),
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
     });
     const json = await response.json();
     if (!response.ok) {
-      console.log('Message couldnt send', json);
+      console.log("Message couldnt send", json);
     }
     if (response.ok) {
-      setMessage('');
+      setMessage("");
       reload();
     }
   };
@@ -124,7 +124,7 @@ const Chat = () => {
               </span>
               <br />
               {chat.messages.map((message) => (
-                <div class="message-container">
+                <div className="message-container">
                   <span className="font-light text-lg text-light-200">
                     {/* testName: message.message.recipientName} */}
                     <p>{message.message.recipientName}</p>
