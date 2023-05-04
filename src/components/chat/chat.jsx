@@ -53,7 +53,7 @@ const Chat = () => {
     const response = await fetch("/api/chats/addmessage", {
       method: "post",
       body: JSON.stringify({
-        // this is dummy data - sender id and recip if are not used
+        // this is dummy data - sender id and recipe if are not used
         objectId: chatMessage,
         senderId: "6380b30f83141a9fd30a7662",
         recipientId: "6380b30f83141a9fd30a7662",
