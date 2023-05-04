@@ -5,8 +5,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ChatCard from "./ChatCard";
 import "./ChatList.css";
 
-// import MessageList from '../messagelist/messagelist';
-
 const Chat = () => {
   const [chat, setChat] = useState({ messages: [], users: [] });
   const [message, setMessage] = useState("");
@@ -109,8 +107,12 @@ const Chat = () => {
             />
           </div>
           <div className="flex flex-col px-10 pb-10 overflow-y-auto">
-            {user.chats.map((chat) => (
-              <ChatCard changeChatDynamic={changeChatDynamic} {...chat} />
+            {user.chats.map((chat, i) => (
+              <ChatCard
+                key={i}
+                changeChatDynamic={changeChatDynamic}
+                {...chat}
+              />
             ))}
           </div>
         </div>
@@ -123,10 +125,9 @@ const Chat = () => {
                 Messages
               </span>
               <br />
-              {chat.messages.map((message) => (
-                <div className="message-container">
+              {chat.messages.map((message, i) => (
+                <div key={i} className="message-container">
                   <span className="font-light text-lg text-light-200">
-                    {/* testName: message.message.recipientName} */}
                     <p>{message.message.recipientName}</p>
                   </span>
                   <span className="font-light text-xl text-light-200">
