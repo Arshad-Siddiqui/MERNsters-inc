@@ -83,7 +83,7 @@ const Chat = () => {
 
   return (
     <>
-      <NavBar linkTo="login" />
+      <NavBar linkTo="logout" />
       <div className="parent-chat-container">
         <div className="flex flex-col bg-dark-400 w-6/12 mr-1 px-0 h-full">
           <div className="flex items-center py-6 px-10">
