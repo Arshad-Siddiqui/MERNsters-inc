@@ -49,7 +49,6 @@ const Chat = () => {
 
   // add msg to chat
   const handleSubmit = async (error) => {
-    console.log("What is in chatmessage: ", chatMessage);
     error.preventDefault();
     const response = await fetch("/api/chats/addmessage", {
       method: "post",
@@ -66,7 +65,7 @@ const Chat = () => {
     });
     const json = await response.json();
     if (!response.ok) {
-      console.log("Message couldnt send", json);
+      console.error("Message couldnt send", json);
     }
     if (response.ok) {
       setMessage("");

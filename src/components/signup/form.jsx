@@ -108,7 +108,6 @@ const Form = () => {
             onClick={() => {
               if (page === FormTitles.length - 1) {
                 submitForm();
-                console.log(formData);
               } else {
                 setPage((currPage) => currPage + 1);
               }
