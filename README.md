@@ -2,6 +2,12 @@
 
 To find and start a conversation with friends. An interactive application that allows you to search and connect with new and existing friends.
 
+## Deployment
+
+Check it out on Vercel [here!](https://mer-nsters-ap3qamont-arshad-siddiqui.vercel.app/signup)
+
+> NOTE: As of right now it isn't connected to a backend so good luck signing up!
+
 ## Here's the monolithic backend: [friendzone-api](https://github.com/Arshad-Siddiqui/MERNsters-api)
 
 ## Tech stack
