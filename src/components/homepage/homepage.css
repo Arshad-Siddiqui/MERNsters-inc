@@ -22,29 +22,6 @@ body {
   align-items: center;
 }
 
-/* h1 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: 0;
-}  */
-
-/* .signup-title { */
-/* height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 3rem; */
-
-/* position: absolute; 
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: 0;
-    font-size: 3rem; */
-/* }   */
-
 .signup-title {
   font-size: 20px;
   color: rgb(255, 255, 255);
@@ -87,21 +64,12 @@ body {
   z-index: 1;
 }
 
-/* .logo {
-    color:white;
-} */
-
 .navbar-logo {
-  /* width: 170px; */
   width: 50%;
   margin: 15px;
   text-align: left;
   padding-top: 55px;
 }
-
-/* .logo{
-    width: 80%;
-} */
 
 .link {
   color: black;
