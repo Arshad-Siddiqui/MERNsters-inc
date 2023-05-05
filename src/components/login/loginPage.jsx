@@ -1,5 +1,5 @@
-import LoginForm from './loginForm';
-import NavBar from '../lib/navbar';
+import LoginForm from "./loginForm";
+import NavBar from "../lib/navbar/navbar";
 
 const LoginPage = () => {
   return (

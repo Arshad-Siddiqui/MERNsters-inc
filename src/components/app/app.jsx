@@ -2,7 +2,7 @@ import React from "react";
 import Homepage from "../homepage/homepage";
 import Form from "../signup/form";
 import { Route, Routes } from "react-router-dom";
-import Footer from "../footer/footer";
+import Footer from "../lib/footer/footer";
 import Chat from "../chat/chat";
 import "../../App.css";
 import LoginPage from "../login/loginPage";

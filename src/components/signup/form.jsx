@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import NavBar from "../lib/navbar";
+import NavBar from "../lib/navbar/navbar";
 import SignUpInfo from "./SignUpInfo";
 import PersonalInfo from "./PersonalInfo";
 import OtherInfo from "./OtherInfo";

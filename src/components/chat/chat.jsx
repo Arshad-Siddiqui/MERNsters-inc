@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import NavBar from "../lib/navbar";
+import NavBar from "../lib/navbar/navbar";
 import { faCaretDown, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ChatCard from "./ChatCard";

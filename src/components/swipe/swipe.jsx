@@ -1,5 +1,5 @@
 import Deck from "../deck/deck";
-import NavBar from "../lib/navbar";
+import NavBar from "../lib/navbar/navbar";
 import "./swipe.css";
 
 export default function Swipe() {

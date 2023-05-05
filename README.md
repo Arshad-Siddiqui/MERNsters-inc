@@ -71,11 +71,11 @@ I would like to be matched with likeminded people based on hobbies and activitie
 
 ### Backend Diagram
 
-<img src='images/backend.png'/>
+<img src='src/assets/images/backend.png' alt="Backend structure" />
 
 ### Frontend Diagram
 
-<img src='images/frontend.png'/>
+<img src='src/assets/images/frontend.png' alt="Frontend structure" />
 
 ## How to run
 
