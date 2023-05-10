@@ -2,10 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./home.css";
 import NavBar from "../../components/lib/navbar/navbar";
+import Footer from "../../components/lib/footer/footer";
 
 const Homepage = () => {
   return (
-    <>
+    <div className="homepage">
       <NavBar linkTo="login" />
       <div className="homepage-form">
         <div className="signup-title">
@@ -19,7 +20,8 @@ const Homepage = () => {
         </Link>
         <div className="footer"></div>
       </div>
-    </>
+      <Footer />
+    </div>
   );
 };
 

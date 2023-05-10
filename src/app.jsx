@@ -1,13 +1,12 @@
 import React from "react";
-import Homepage from "../../pages/home/home";
-import Form from "../signup/form";
+import Homepage from "./pages/home/home";
+import Form from "./components/signup/form";
 import { Route, Routes } from "react-router-dom";
-import Footer from "../lib/footer/footer";
-import Chat from "../chat/chat";
-import "../../App.css";
-import LoginPage from "../login/loginPage";
-import Swipe from "../swipe/swipe";
-import NotFound from "../../pages/notfound/notfound";
+import Chat from "./components/chat/chat";
+import "./App.css";
+import LoginPage from "./components/login/loginPage";
+import Swipe from "./components/swipe/swipe";
+import NotFound from "./pages/notfound/notfound";
 
 const App = () => {
   return (
@@ -20,7 +19,6 @@ const App = () => {
         <Route path="/swipe" element={<Swipe />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
-      <Footer />
     </>
   );
 };
