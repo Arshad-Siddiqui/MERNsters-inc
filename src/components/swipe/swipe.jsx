@@ -3,6 +3,10 @@ import NavBar from "../lib/navbar/navbar";
 import "./swipe.css";
 
 export default function Swipe() {
+  useEffect(() => {
+    document.title = "FriendZone - Swipe";
+  });
+
   return (
     <div className="swipe-container">
       <NavBar linkTo={"logout"} />

@@ -6,6 +6,10 @@ import ChatCard from "./ChatCard";
 import "./ChatList.css";
 
 const Chat = () => {
+  useEffect(() => {
+    document.title = "FriendZone - Chat";
+  });
+
   const [chat, setChat] = useState({ messages: [], users: [] });
   const [message, setMessage] = useState("");
   const [user, setUser] = useState({

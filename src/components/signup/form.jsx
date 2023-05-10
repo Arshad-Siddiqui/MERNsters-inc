@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import NavBar from "../lib/navbar/navbar";
 import SignUpInfo from "./SignUpInfo";
 import PersonalInfo from "./PersonalInfo";
@@ -8,6 +8,10 @@ import { uploadBytes, ref, getDownloadURL } from "firebase/storage";
 import { useNavigate } from "react-router-dom";
 
 const Form = () => {
+  useEffect(() => {
+    document.title = "FriendZone - Sign Up";
+  });
+
   const navigate = useNavigate();
   const [page, setPage] = useState(0);
 
