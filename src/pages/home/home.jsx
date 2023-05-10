@@ -4,7 +4,7 @@ import "./home.css";
 import NavBar from "../../components/lib/navbar/navbar";
 import Footer from "../../components/lib/footer/footer";
 
-const Homepage = () => {
+export default function Homepage() {
   return (
     <div className="homepage">
       <NavBar linkTo="login" />
@@ -27,6 +27,4 @@ const Homepage = () => {
       <Footer />
     </div>
   );
-};
-
-export default Homepage;
+}
