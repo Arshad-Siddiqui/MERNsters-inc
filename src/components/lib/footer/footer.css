@@ -6,9 +6,9 @@
   height: 70px;
   text-align: center;
   font-weight: 300;
-  font-size: 15px;
-}
-
-.fa-4x {
-  background-color: transparent;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }

@@ -6,7 +6,9 @@ export default function NavBar({ linkTo }) {
   return (
     <div className="navbar">
       <div className="navbar-logo">
-        <img src={longLogo} alt="logo" />
+        <Link to="/">
+          <img src={longLogo} alt="logo" />
+        </Link>
       </div>
       <div className="navbar-links">
         <Link to={`/${linkTo}`} className="link">
