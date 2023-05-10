@@ -18,6 +18,10 @@ const Homepage = () => {
             <b>Create account</b>
           </div>
         </Link>
+        {/* TODO: Create an about page */}
+        <Link to="/about">
+          <div className="about-button">About</div>
+        </Link>
         <div className="footer"></div>
       </div>
       <Footer />
