@@ -1,6 +1,7 @@
 import Deck from "../deck/deck";
 import NavBar from "../lib/navbar/navbar";
 import "./swipe.css";
+import { useEffect } from "react";
 
 export default function Swipe() {
   useEffect(() => {
