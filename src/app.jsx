@@ -1,6 +1,6 @@
 import React from "react";
 import Homepage from "./pages/home/home";
-import Form from "./components/signup/form";
+import Form from "./pages/signup/signup";
 import { Route, Routes } from "react-router-dom";
 import Chat from "./components/chat/chat";
 import "./App.css";

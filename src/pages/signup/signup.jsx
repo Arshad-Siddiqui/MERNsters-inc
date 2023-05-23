@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
-import NavBar from "../lib/navbar/navbar";
-import SignUpInfo from "./SignUpInfo";
-import PersonalInfo from "./PersonalInfo";
-import OtherInfo from "./OtherInfo";
-import { storage } from "../uploadimage/firebase";
+import NavBar from "../../components/lib/navbar/navbar";
+import { SignUpInfo, OtherInfo, PersonalInfo } from "../../components/signup";
+import { storage } from "../../components/uploadimage/firebase";
 import { uploadBytes, ref, getDownloadURL } from "firebase/storage";
 import { useNavigate } from "react-router-dom";
 
-const Form = () => {
+export default function Form() {
   useEffect(() => {
     document.title = "FriendZone - Sign Up";
   });
@@ -123,6 +121,4 @@ const Form = () => {
       </div>
     </>
   );
-};
-
-export default Form;
+}
