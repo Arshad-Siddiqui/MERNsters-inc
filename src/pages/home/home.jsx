@@ -23,12 +23,10 @@ export default function Homepage() {
           </div>
         </Link>
         {/* TODO: Create an about page */}
-        <Link to="/about">
-          <div className="about-button">About</div>
+        <Link to="/about" className="about-button">
+          <div className="about-button-text">About</div>
         </Link>
-        <div className="footer"></div>
       </div>
-      <Footer />
     </div>
   );
 }

@@ -1,3 +1,4 @@
+import "./navbar.css";
 import { Link } from "react-router-dom";
 import capitalizeFirstLetter from "../capitalise";
 import longLogo from "../../../assets/images/longLogo.png";
@@ -5,11 +6,9 @@ import longLogo from "../../../assets/images/longLogo.png";
 export default function NavBar({ linkTo }) {
   return (
     <div className="navbar">
-      <div className="navbar-logo">
-        <Link to="/">
-          <img src={longLogo} alt="logo" />
-        </Link>
-      </div>
+      <Link to="/" className="navbar-logo">
+        FriendZone
+      </Link>
       <div className="navbar-links">
         <Link to={`/${linkTo}`} className="link">
           {capitalizeFirstLetter(linkTo)}
