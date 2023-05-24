@@ -4,9 +4,10 @@ import { useNavigate } from "react-router-dom";
 import "./loginForm.css";
 
 const LoginForm = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate();
+  const [loginMessage, setLoginMessage] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,11 +26,16 @@ const LoginForm = () => {
       let data = await response.json();
       window.localStorage.setItem("token", data.token),
         window.localStorage.setItem("userId", data._id),
-        window.localStorage.setItem("firstName", data.firstName),
-        window.localStorage.setItem("lastName", data.lastName);
+        window.localStorage.setItem("firstName", data.firstName), // These should be api calls
+        window.localStorage.setItem("lastName", data.lastName); // TODO: Stop this being locally stored
       navigate("/swipe");
     } else {
       console.error("Login failed");
+      setLoginMessage("Login failed");
+
+      setTimeout(() => {
+        setLoginMessage("");
+      }, 3000);
     }
   };
 
@@ -59,7 +65,7 @@ const LoginForm = () => {
           <button type="submit">Login</button>
         </div>
       </form>
-      <div className="footer"></div>
+      <div className="login-message-box">{loginMessage}</div>
     </div>
   );
 };
