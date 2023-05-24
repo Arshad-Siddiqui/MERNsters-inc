@@ -2,6 +2,7 @@ import LoginForm from "../../components/login/loginForm";
 import LoginMessage from "../../components/login/loginMessage";
 import NavBar from "../../components/lib/navbar/navbar";
 import { useEffect, useState } from "react";
+import "./login.css";
 
 const LoginPage = () => {
   useEffect(() => {
@@ -11,13 +12,11 @@ const LoginPage = () => {
   const [loginMessage, setLoginMessage] = useState(""); // Used to show error messages to user
 
   return (
-    <>
+    <div className="login-page">
       <NavBar linkTo="signup" />
-      <div className="login-page">
-        <LoginForm setLoginMessage={setLoginMessage} />
-        <LoginMessage loginMessage={loginMessage} />
-      </div>
-    </>
+      <LoginForm setLoginMessage={setLoginMessage} />
+      <LoginMessage loginMessage={loginMessage} />
+    </div>
   );
 };
 

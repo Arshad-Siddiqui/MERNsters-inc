@@ -42,11 +42,11 @@ const LoginForm = (setLoginMessage) => {
 
   return (
     <>
-      <div className="login-form">
+      <div className="login-form-container">
         <div className="login-title">
           <h1>Login</h1>
         </div>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="login-form">
           <div className="login-input">
             <label htmlFor="email">Email</label>
             <input
