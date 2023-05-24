@@ -33,40 +33,45 @@ const LoginForm = () => {
       console.error("Login failed");
       setLoginMessage("Login failed");
 
+      const loginMessageBox = document.querySelector(".login-message-box");
+      loginMessageBox.classList.add("login-message-box-fail");
       setTimeout(() => {
         setLoginMessage("");
+        loginMessageBox.classList.remove("login-message-box-fail");
       }, 3000);
     }
   };
 
   return (
-    <div className="login-form">
-      <div className="login-title">
-        <h1>Login</h1>
+    <>
+      <div className="login-form">
+        <div className="login-title">
+          <h1>Login</h1>
+        </div>
+        <form onSubmit={handleSubmit}>
+          <div className="login-input">
+            <input
+              type="text"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Email"
+            />
+          </div>
+          <div className="login-input">
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Password"
+            />
+          </div>
+          <div className="login-button">
+            <button type="submit">Login</button>
+          </div>
+        </form>
       </div>
-      <form onSubmit={handleSubmit}>
-        <div className="login-input">
-          <input
-            type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Email"
-          />
-        </div>
-        <div className="login-input">
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Password"
-          />
-        </div>
-        <div className="login-button">
-          <button type="submit">Login</button>
-        </div>
-      </form>
       <div className="login-message-box">{loginMessage}</div>
-    </div>
+    </>
   );
 };
 
