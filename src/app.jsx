@@ -8,7 +8,7 @@ import LoginPage from "./pages/login/login";
 import Swipe from "./components/swipe/swipe";
 import NotFound from "./pages/notfound/notfound";
 
-const App = () => {
+export default function App() {
   return (
     <>
       <Routes>
@@ -21,6 +21,4 @@ const App = () => {
       </Routes>
     </>
   );
-};
-
-export default App;
+}

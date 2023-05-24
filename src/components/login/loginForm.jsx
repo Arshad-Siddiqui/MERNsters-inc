@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./loginForm.css";
 
-const LoginForm = (setLoginMessage) => {
+const LoginForm = ({ setLoginMessage }) => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -29,7 +29,8 @@ const LoginForm = (setLoginMessage) => {
         window.localStorage.setItem("lastName", data.lastName); // TODO: Stop this being locally stored
       navigate("/swipe");
     } else {
-      setLoginMessage("Login failed");
+      console.log(response.body);
+      setLoginMessage(response.body.message || "Login failed");
 
       const loginMessageBox = document.querySelector(".login-message-box");
       loginMessageBox.classList.add("login-message-box-fail");
@@ -41,36 +42,34 @@ const LoginForm = (setLoginMessage) => {
   };
 
   return (
-    <>
-      <div className="login-form-container">
-        <div className="login-title">
-          <h1>Login</h1>
-        </div>
-        <form onSubmit={handleSubmit} className="login-form">
-          <div className="login-input">
-            <label htmlFor="email">Email</label>
-            <input
-              type="text"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Email"
-            />
-          </div>
-          <div className="login-input">
-            <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Password"
-            />
-          </div>
-          <div className="login-button">
-            <button type="submit">Login</button>
-          </div>
-        </form>
+    <div className="login-form-container">
+      <div className="login-title">
+        <h1>Login</h1>
       </div>
-    </>
+      <form onSubmit={handleSubmit} className="login-form">
+        <div className="login-input">
+          <label htmlFor="email">Email</label>
+          <input
+            type="text"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Email"
+          />
+        </div>
+        <div className="login-input">
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Password"
+          />
+        </div>
+        <div className="login-button">
+          <button type="submit">Login</button>
+        </div>
+      </form>
+    </div>
   );
 };
 
