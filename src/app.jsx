@@ -4,7 +4,7 @@ import Form from "./pages/signup/signup";
 import { Route, Routes } from "react-router-dom";
 import Chat from "./components/chat/chat";
 import "./App.css";
-import LoginPage from "./components/login/loginPage";
+import LoginPage from "./pages/login/login";
 import Swipe from "./components/swipe/swipe";
 import NotFound from "./pages/notfound/notfound";
 
