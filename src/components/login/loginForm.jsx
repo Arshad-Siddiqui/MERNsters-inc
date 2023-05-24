@@ -3,11 +3,10 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./loginForm.css";
 
-const LoginForm = () => {
+const LoginForm = (setLoginMessage) => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loginMessage, setLoginMessage] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,7 +29,6 @@ const LoginForm = () => {
         window.localStorage.setItem("lastName", data.lastName); // TODO: Stop this being locally stored
       navigate("/swipe");
     } else {
-      console.error("Login failed");
       setLoginMessage("Login failed");
 
       const loginMessageBox = document.querySelector(".login-message-box");
@@ -50,6 +48,7 @@ const LoginForm = () => {
         </div>
         <form onSubmit={handleSubmit}>
           <div className="login-input">
+            <label htmlFor="email">Email</label>
             <input
               type="text"
               value={email}
@@ -58,6 +57,7 @@ const LoginForm = () => {
             />
           </div>
           <div className="login-input">
+            <label htmlFor="password">Password</label>
             <input
               type="password"
               value={password}
@@ -70,7 +70,6 @@ const LoginForm = () => {
           </div>
         </form>
       </div>
-      <div className="login-message-box">{loginMessage}</div>
     </>
   );
 };

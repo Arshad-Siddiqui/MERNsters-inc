@@ -1,6 +1,6 @@
 .login-form {
   width: 100%;
-  max-width: 330px;
+  max-width: 430px;
   padding: 15px;
   margin: auto;
   background-color: #fff;
@@ -17,7 +17,7 @@
 }
 
 .login-title {
-  margin-bottom: 20px;
+  margin: 10px 50px 20px;
 }
 
 .login-input {
@@ -28,17 +28,4 @@
   background-color: rgb(255, 3, 188);
   border: none;
   color: white;
-}
-
-.login-message-box-fail {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding: 10px;
-  border-radius: 10px;
-  background-color: rgb(255, 3, 188);
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
 }
