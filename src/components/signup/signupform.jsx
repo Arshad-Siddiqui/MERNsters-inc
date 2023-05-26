@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import NavBar from "../lib/navbar/navbar";
 import { SignUpInfo, OtherInfo, PersonalInfo } from ".";
 import { storage } from "../uploadimage/firebase";
 import { uploadBytes, ref, getDownloadURL } from "firebase/storage";
@@ -76,49 +75,36 @@ export default function Form() {
   };
 
   return (
-    <>
-      <NavBar linkTo="login" />
-      <div className="form"></div>
+    <div className="form-container">
+      <div className="form-header">
+        <h1>{FormTitles[page]}</h1>
+      </div>
 
-      <div className="progressbar">
-        <div
-          style={{
-            width: page === 0 ? "33.3%" : page == 1 ? "66.6%" : "100%",
+      <div className="form-body">{PageDisplay()}</div>
+      <div className="form-footer">
+        <button
+          className="prev-btn"
+          disabled={page == 0}
+          onClick={() => {
+            setPage((currPage) => currPage - 1);
           }}
-        ></div>
+        >
+          Previous
+        </button>
+
+        <button
+          className="next-btn"
+          onClick={() => {
+            if (page === FormTitles.length - 1) {
+              submitForm();
+            } else {
+              setPage((currPage) => currPage + 1);
+            }
+          }}
+        >
+          {page === FormTitles.length - 1 ? "Submit" : "Next"}
+        </button>
       </div>
-
-      <div className="form-container">
-        <div className="form-header">
-          <h1>{FormTitles[page]}</h1>
-        </div>
-
-        <div className="form-body">{PageDisplay()}</div>
-        <div className="form-footer">
-          <button
-            className="prev-btn"
-            disabled={page == 0}
-            onClick={() => {
-              setPage((currPage) => currPage - 1);
-            }}
-          >
-            Previous
-          </button>
-
-          <button
-            className="next-btn"
-            onClick={() => {
-              if (page === FormTitles.length - 1) {
-                submitForm();
-              } else {
-                setPage((currPage) => currPage + 1);
-              }
-            }}
-          >
-            {page === FormTitles.length - 1 ? "Submit" : "Next"}
-          </button>
-        </div>
-      </div>
-    </>
+    </div>
   );
 }
