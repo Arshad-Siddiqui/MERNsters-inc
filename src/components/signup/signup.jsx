@@ -1,26 +1,11 @@
 import { useState } from "react";
 import "./signup.css";
 export default function SignupForm() {
-  function changeBirthday(event) {
-    setFormData({ ...formData, birthday: event.target.value });
-  }
-
-  function onChangeValue(event) {
-    setFormData({ ...formData, interests: event.target.value });
-  }
-
-  const current = new Date().toISOString().split("T")[0];
-
   const [formData, setFormData] = useState({
     userName: "",
-    firstName: "",
-    lastName: "",
     email: "",
     password: "",
     confirmPassword: "",
-    profilePic: "",
-    birthday: "",
-    gender: "",
   });
 
   const UploadProfileImage = (image) => {
@@ -71,22 +56,7 @@ export default function SignupForm() {
             setFormData({ ...formData, userName: event.target.value })
           }
         />
-        <input
-          type={"text"}
-          placeholder={"First Name"}
-          value={formData.firstName}
-          onChange={(e) =>
-            setFormData({ ...formData, firstName: e.target.value })
-          }
-        />
-        <input
-          type={"text"}
-          placeholder={"Last Name"}
-          value={formData.lastName}
-          onChange={(e) =>
-            setFormData({ ...formData, lastName: e.target.value })
-          }
-        />
+
         <input
           type={"text"}
           placeholder={"Email"}
@@ -112,6 +82,27 @@ export default function SignupForm() {
           }
         />
       </div>
+    </form>
+  );
+}
+
+export function Form2() {
+  return (
+    <form className="signup-form-2">
+      <input
+        type={"text"}
+        placeholder={"First Name"}
+        value={formData.firstName}
+        onChange={(e) =>
+          setFormData({ ...formData, firstName: e.target.value })
+        }
+      />
+      <input
+        type={"text"}
+        placeholder={"Last Name"}
+        value={formData.lastName}
+        onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
+      />
       <div className="personal-info-container">
         <label>
           Profile pic:
@@ -123,46 +114,61 @@ export default function SignupForm() {
           />
         </label>
       </div>
-      <div className="other-info-container">
-        <label>
-          Date of birth:
-          <input
-            onChange={changeBirthday}
-            type="date"
-            placeholder="Birthday"
-            max={current}
-          />
-        </label>
-        <label>
-          Gender:
-          <div>
-            <input
-              type="radio"
-              value="Female"
-              name="gender"
-              checked={formData.gender === "Female"}
-              onChange={onChangeValue}
-            />
-            Female
-            <input
-              type="radio"
-              value="Male"
-              name="gender"
-              checked={formData.gender === "Male"}
-              onChange={onChangeValue}
-            />
-            Male
-            <input
-              type="radio"
-              value="Other"
-              name="gender"
-              checked={formData.gender === "Other"}
-              onChange={onChangeValue}
-            />
-            Other
-          </div>
-        </label>
-      </div>
     </form>
+  );
+}
+
+export function Form3() {
+  function onChangeValue(event) {
+    setFormData({ ...formData, interests: event.target.value });
+  }
+
+  function changeBirthday(event) {
+    setFormData({ ...formData, birthday: event.target.value });
+  }
+
+  const current = new Date().toISOString().split("T")[0];
+
+  return (
+    <div className="other-info-container">
+      <label>
+        Date of birth:
+        <input
+          onChange={changeBirthday}
+          type="date"
+          placeholder="Birthday"
+          max={current}
+        />
+      </label>
+      <label>
+        Gender:
+        <div>
+          <input
+            type="radio"
+            value="Female"
+            name="gender"
+            checked={formData.gender === "Female"}
+            onChange={onChangeValue}
+          />
+          Female
+          <input
+            type="radio"
+            value="Male"
+            name="gender"
+            checked={formData.gender === "Male"}
+            onChange={onChangeValue}
+          />
+          Male
+          <input
+            type="radio"
+            value="Other"
+            name="gender"
+            checked={formData.gender === "Other"}
+            onChange={onChangeValue}
+          />
+          Other
+        </div>
+      </label>
+    </div>
   );
 }
