@@ -1,8 +1,9 @@
-.chonky-signup {
+.sign-up-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
+  max-height: 400px;
   background-color: white;
 }
