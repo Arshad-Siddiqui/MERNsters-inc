@@ -13,12 +13,12 @@ export default function Homepage() {
       <NavBar linkTo="login" />
       <div className="homepage-form">
         <div className="signup-title">
-          <h1>Get in the zone. Join friendzone®</h1>
+          <h1>Get in the zone.</h1>
         </div>
 
         <Link to="/signup">
           <div className="signup-button">
-            <b>Create account</b>
+            <b>Join friendzone</b>
           </div>
         </Link>
         {/* TODO: Create an about page */}
