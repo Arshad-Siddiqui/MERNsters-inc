@@ -22,12 +22,12 @@ export default function Homepage() {
               <b>Join friendzone</b>
             </div>
           </Link>
-          {/* TODO: Create an about page */}
-          <Link to="/about" className="about-button">
-            <div className="about-button-text">About</div>
-          </Link>
         </div>
       </div>
+      {/* TODO: Create an about page */}
+      <Link to="/about" className="about-button">
+        <div className="about-button-text">About</div>
+      </Link>
     </div>
   );
 }
