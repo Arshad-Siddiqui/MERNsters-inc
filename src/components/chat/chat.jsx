@@ -4,6 +4,7 @@ import { faCaretDown, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ChatCard from "./ChatCard";
 import "./ChatList.css";
+import "./chat.css";
 
 const Chat = () => {
   useEffect(() => {

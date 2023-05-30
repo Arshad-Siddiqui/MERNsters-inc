@@ -1,0 +1,24 @@
+.parent-chat-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.chat-container {
+  height: 100%;
+  width: 568.35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  background-color: rgb(55 65 81);
+}
+
+.inbox-container {
+  height: 100%;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+  background-color: green;
+}
