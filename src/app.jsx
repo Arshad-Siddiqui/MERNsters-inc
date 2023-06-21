@@ -10,15 +10,13 @@ import NotFound from "./pages/notfound/notfound";
 
 export default function App() {
   return (
-    <>
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/signup" element={<Form />} />
-        <Route path="/chat" element={<Chat />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/swipe" element={<Swipe />} />
-        <Route path="/*" element={<NotFound />} />
-      </Routes>
-    </>
+    <Routes>
+      <Route path="/" element={<Homepage />} />
+      <Route path="/signup" element={<Form />} />
+      <Route path="/chat" element={<Chat />} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/swipe" element={<Swipe />} />
+      <Route path="/*" element={<NotFound />} />
+    </Routes>
   );
 }
